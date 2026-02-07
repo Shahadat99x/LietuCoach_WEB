@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-outfit);
+
+  /* Primary: Violet (Trust, Wisdom) */
+  --color-primary: var(--color-violet-600);
+  --color-primary-foreground: #ffffff;
+  --color-primary-hover: var(--color-violet-700);
+
+  /* Secondary: Teal/Mint (Freshness, Growth) */
+  --color-secondary: var(--color-teal-400);
+  --color-secondary-foreground: #ffffff;
+  --color-secondary-hover: var(--color-teal-500);
+
+  /* Accent: Amber (Warmth, Energy) */
+  --color-accent: var(--color-amber-400);
+  --color-accent-foreground: #171717;
+  
+  /* Neutral: Soft Grays */
+  --color-background: #ffffff;
+  --color-foreground: var(--color-neutral-900);
+  
+  --color-muted: var(--color-neutral-100);
+  --color-muted-foreground: var(--color-neutral-600);
+
+  --color-card: #ffffff;
+  --color-card-foreground: var(--color-neutral-900);
+
+  --color-border: var(--color-neutral-200);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    @apply antialiased selection:bg-teal-100 selection:text-teal-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Micro-interactions */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .card-base {
+    @apply rounded-2xl border border-neutral-100 bg-white shadow-sm transition-all hover:border-violet-100;
+  }
+}
