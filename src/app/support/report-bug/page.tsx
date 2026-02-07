@@ -22,7 +22,7 @@ export default function BugSupport() {
         <ul className="mb-0">
           <li><strong>Phone Model:</strong> (e.g., Samsung Galaxy S22, Pixel 7)</li>
           <li><strong>Android Version:</strong> (e.g., Android 13)</li>
-          <li><strong>What happened?</strong> (e.g., "App crashed when I clicked 'Start Lesson'")</li>
+          <li><strong>What happened?</strong> (e.g., &quot;App crashed when I clicked &apos;Start Lesson&apos;&quot;)</li>
           <li><strong>Screenshots:</strong> (Highly appreciated!)</li>
         </ul>
       </div>

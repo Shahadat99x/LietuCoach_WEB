@@ -85,7 +85,7 @@ export default function DownloadPage() {
                   </div>
                </div>
                <p className="text-neutral-600 mb-6 leading-relaxed">
-                 Most language apps break when you lose signal. LietuCoach is built for the real world—whether you're on a plane to Vilnius or in a basement bar in Kaunas.
+                Most language apps break when you lose signal. LietuCoach is built for the real world—whether you&apos;re on a plane to Vilnius or in a basement bar in Kaunas.
                </p>
                <div className="h-2 w-full bg-neutral-100 rounded-full overflow-hidden">
                  <div className="h-full bg-teal-500 w-3/4"></div>
@@ -129,7 +129,7 @@ export default function DownloadPage() {
                   Is it really free?
                 </h3>
                 <p className="text-neutral-600">
-                  Yes. The core "Survival A1" course is completely free. We may add premium advanced content later, but the basics will always be free.
+                  Yes. The core &quot;Survival A1&quot; course is completely free. We may add premium advanced content later, but the basics will always be free.
                 </p>
               </div>
             </div>

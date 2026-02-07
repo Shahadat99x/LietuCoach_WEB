@@ -37,14 +37,14 @@ export default function PrivacyPage() {
         <section>
           <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">2. Device Permissions</h2>
           <p className="mb-4">
-            The app may request access to your device's storage to save offline content packs (audio files). This permission is strictly used for app functionality.
+            The app may request access to your device&apos;s storage to save offline content packs (audio files). This permission is strictly used for app functionality.
           </p>
         </section>
 
         <section>
           <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">3. Third-Party Services</h2>
           <p className="mb-4">
-            We use Google Play Services for app distribution and basic analytics. Please refer to Google's privacy policy for details on how they handle data.
+            We use Google Play Services for app distribution and basic analytics. Please refer to Google&apos;s privacy policy for details on how they handle data.
           </p>
         </section>
 

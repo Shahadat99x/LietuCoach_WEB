@@ -30,7 +30,7 @@ export function FAQ() {
             Clean & clear answers.
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600">
-            Got questions? We've got answers.
+            Got questions? We&apos;ve got answers.
           </p>
         </div>
         <div className="mx-auto max-w-3xl divide-y divide-neutral-200 rounded-xl bg-white shadow-sm">

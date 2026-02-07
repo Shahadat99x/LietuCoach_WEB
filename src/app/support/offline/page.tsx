@@ -13,12 +13,12 @@ export default function OfflineSupport() {
     >
       <h3>Does the app work offline?</h3>
       <p>
-        <strong>Yes!</strong> LietuCoach is "Offline First". This means the core functionality (lessons, phrases, basic audio) is designed to work without WiFi.
+        <strong>Yes!</strong> LietuCoach is &quot;Offline First&quot;. This means the core functionality (lessons, phrases, basic audio) is designed to work without WiFi.
       </p>
 
       <h3>How do I download content?</h3>
       <p>
-        When you first open the app, it will ask to download the "Core Content Pack" (~45MB). 
+        When you first open the app, it will ask to download the &quot;Core Content Pack&quot; (~45MB). 
       </p>
       <ol>
         <li>Connect to WiFi (recommended).</li>
@@ -26,7 +26,7 @@ export default function OfflineSupport() {
         <li>Once finished, you can turn on Airplane Mode and keep learning.</li>
       </ol>
 
-      <h3>"Download Failed" Error</h3>
+      <h3>&quot;Download Failed&quot; Error</h3>
       <p>
         If the initial download fails:
       </p>

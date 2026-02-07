@@ -1,6 +1,6 @@
 import { SupportLayout } from "@/components/support/SupportLayout";
 import Link from "next/link";
-import { siteConfig } from "@/config/site";
+
 
 export const metadata = {
   title: "Account & Privacy - Help Center",
