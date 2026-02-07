@@ -28,13 +28,13 @@ export default function StartPage() {
     {
       day: "Day 2",
       title: "Essential Greetings",
-      task: "Learn to say 'Labas' (Hi) and 'Ačiū' (Thank you) confidently.",
+      task: "Learn to say &apos;Labas&apos; (Hi) and &apos;Ačiū&apos; (Thank you) confidently.",
       icon: MessageSquare,
       link: "/resources/essential-greetings",
     },
     {
       day: "Day 3",
-      title: "I Don't Understand",
+      title: "I Don&apos;t Understand",
       task: "Learn survival phrases for when you get stuck.",
       icon: BookOpen,
       link: "/resources/asking-for-help",
