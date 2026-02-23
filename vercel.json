@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/keepalive",
+      "path": "/api/keepalive?key=<secret>",
       "schedule": "0 9 * * *"
     }
   ]

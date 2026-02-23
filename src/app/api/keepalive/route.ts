@@ -1,14 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(request: NextRequest) {
-  // Validate the CRON_SECRET header to ensure this request comes from an authorized source
+  // Validate the CRON_SECRET header or query param to ensure this request comes from an authorized source
   const authHeader = request.headers.get("x-cron-secret") || request.headers.get("authorization");
+  const keyParam = request.nextUrl.searchParams.get("key");
   const cronSecret = process.env.CRON_SECRET;
   
-  if (
-    !cronSecret ||
-    (authHeader !== cronSecret && authHeader !== `Bearer ${cronSecret}`)
-  ) {
+  const isHeaderValid = authHeader === cronSecret || authHeader === `Bearer ${cronSecret}`;
+  const isKeyValid = keyParam === cronSecret;
+
+  if (!cronSecret || (!isHeaderValid && !isKeyValid)) {
     return NextResponse.json(
       { ok: false, error: "Unauthorized" },
       { status: 401 }
