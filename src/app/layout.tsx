@@ -53,11 +53,6 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({
@@ -75,7 +70,7 @@ export default function RootLayout({
         "url": siteConfig.url,
         "logo": {
           "@type": "ImageObject",
-          "url": `${siteConfig.url}/favicon.ico`, // Fallback to favicon for now
+          "url": `${siteConfig.url}/icon.svg`, // Fallback to our new SVG logo
         },
         "sameAs": [
           siteConfig.links.twitter,
