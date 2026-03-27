@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import { getPlayStoreLink } from "@/lib/analytics";
 
 export default function NotFound() {
   return (
@@ -14,7 +15,7 @@ export default function NotFound() {
         <Button href="/" variant="outline">
           Go Home
         </Button>
-        <Button href="https://play.google.com/store/apps/details?id=com.lietucoach.app">
+        <Button href={getPlayStoreLink("not_found")}>
           Start Learning Lithuanian
         </Button>
       </div>

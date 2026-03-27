@@ -11,6 +11,7 @@ import { siteConfig } from "@/config/site";
 import Script from "next/script";
 import { Card } from "@/components/ui/Card";
 import { ArrowRight } from "lucide-react";
+import { getPlayStoreLink } from "@/lib/analytics";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -127,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
       <div className="mt-16 rounded-2xl bg-violet-50 p-8 text-center border border-violet-100">
         <h3 className="mb-2 font-heading text-2xl font-bold text-violet-900">Enjoyed this post?</h3>
         <p className="mb-6 text-violet-700">Start learning Lithuanian with structured lessons and audio practice.</p>
-        <Button href="https://play.google.com/store/apps/details?id=com.lietucoach.app">
+        <Button href={getPlayStoreLink("blog_cta")}>
           Get the App
         </Button>
       </div>

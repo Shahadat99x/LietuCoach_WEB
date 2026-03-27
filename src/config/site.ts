@@ -7,7 +7,7 @@ export const siteConfig = {
     twitter: "https://twitter.com/lietucoach",
     github: "https://github.com/lietucoach",
     supportEmail: "hello@dhossain.com",
-    playStore: "https://play.google.com/store/apps/details?id=com.lietucoach.app", // Set to "" to enable "Coming Soon" mode
+    playStore: "https://play.google.com/store/apps/details?id=app.lietucoach.lietucoach", // Set to "" to enable "Coming Soon" mode
   },
   author: {
     name: "LietuCoach Team",

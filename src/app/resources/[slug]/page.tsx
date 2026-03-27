@@ -12,6 +12,7 @@ import { siteConfig } from "@/config/site";
 import Script from "next/script";
 import { Card } from "@/components/ui/Card";
 import { ArrowRight } from "lucide-react";
+import { getPlayStoreLink } from "@/lib/analytics";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -123,7 +124,7 @@ export default async function ResourcePage({ params }: Props) {
       <div className="mt-16 rounded-2xl bg-teal-50 p-8 border border-teal-100 text-center">
         <h3 className="mb-2 font-heading text-2xl font-bold text-teal-900">Practice what you learned</h3>
         <p className="mb-6 text-teal-800">Download LietuCoach to hear native pronunciation and test your knowledge.</p>
-        <Button href="https://play.google.com/store/apps/details?id=com.lietucoach.app" variant="secondary">
+        <Button href={getPlayStoreLink("resource_cta")} variant="secondary">
           Download App
         </Button>
       </div>
