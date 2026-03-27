@@ -67,11 +67,11 @@ export function Header() {
       {/* Mobile Nav Overlay */}
       <div
         id="mobile-menu"
-        className={`fixed inset-0 z-40 bg-white transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed inset-0 z-50 bg-white transition-transform duration-300 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col h-full pt-24 px-6 pb-6">
+        <div className="flex flex-col h-full overflow-y-auto pt-24 px-6 pb-6">
           <nav className="flex flex-col gap-6 text-lg">
             <Link
               href="/resources"

@@ -23,7 +23,7 @@ export default function Home() {
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <h2 className="text-3xl font-bold font-heading text-neutral-900 mb-4">Latest from LietuCoach</h2>
+              <h2 className="text-3xl font-bold font-heading leading-tight text-neutral-900 mb-4">Latest from LietuCoach</h2>
               <p className="text-neutral-600 max-w-2xl">
                 Tips, guides, and culture notes to help you master Lithuanian.
               </p>

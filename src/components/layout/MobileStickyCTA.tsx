@@ -29,7 +29,7 @@ export function MobileStickyCTA() {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden animate-in slide-in-from-bottom-10 fade-in duration-500">
+    <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden animate-in slide-in-from-bottom-10 fade-in duration-500">
       <div className="bg-neutral-900 text-white rounded-xl shadow-2xl p-4 flex items-center justify-between gap-3 border border-neutral-800">
         <div className="flex-1">
           <div className="font-bold text-sm">Get LietuCoach App</div>

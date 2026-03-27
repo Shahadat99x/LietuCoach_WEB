@@ -10,9 +10,9 @@ export function Hero() {
         <div className="inline-flex items-center rounded-full bg-violet-100 px-3 py-1 text-sm font-medium text-violet-800 mb-6">
           🚀 Launching Soon
         </div>
-        <h1 className="mb-6 max-w-4xl font-heading text-5xl font-bold tracking-tight text-neutral-900 sm:text-6xl md:text-7xl">
+        <h1 className="mb-6 max-w-4xl font-heading text-4xl font-bold leading-tight tracking-tight text-neutral-900 sm:font-bold sm:leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
           Speak Lithuanian. <br className="hidden sm:block" />
-          <span className="bg-gradient-to-r from-violet-600 to-teal-500 bg-clip-text text-transparent">Anytime. Anywhere.</span>
+          <span className="mt-2 block sm:mt-0 sm:inline bg-gradient-to-r from-violet-600 to-teal-500 bg-clip-text text-transparent">Anytime. Anywhere.</span>
         </h1>
         <p className="mb-10 max-w-2xl text-lg text-neutral-600 sm:text-xl">
           {siteConfig.description}
