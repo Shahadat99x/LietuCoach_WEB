@@ -5,7 +5,7 @@ import { getPlayStoreLink } from "@/lib/analytics";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-neutral-50 py-20 lg:py-32">
+    <section className="relative overflow-clip bg-neutral-50 py-20 lg:py-32">
       <div className="container mx-auto flex flex-col items-center px-4 text-center md:px-6">
         <div className="inline-flex items-center rounded-full bg-violet-100 px-3 py-1 text-sm font-medium text-violet-800 mb-6">
           🚀 Launching Soon

@@ -97,7 +97,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${outfit.variable} ${inter.variable} flex min-h-screen flex-col antialiased font-sans`}
+        className={`${outfit.variable} ${inter.variable} flex min-h-screen flex-col antialiased font-sans w-full overflow-x-hidden`}
       >
         <Script
           id="json-ld"
@@ -105,7 +105,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Header />
-        <main className="flex-1">
+        <main className="flex-1 w-full flex flex-col">
           {children}
         </main>
         <Footer />

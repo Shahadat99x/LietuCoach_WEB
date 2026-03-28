@@ -45,6 +45,11 @@
 }
 
 @layer components {
+  /* Enforce core structural bounds for Tailwind v4 missing containers */
+  .container {
+    @apply w-full max-w-[100vw] mx-auto;
+  }
+
   /* Micro-interactions */
   .hover-lift {
     @apply transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg;
