@@ -7,9 +7,10 @@ import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 import { publicNavItems } from "@/config/nav";
 import { getPlayStoreLink } from "@/lib/analytics";
+import { MobileNavProvider, useMobileNav } from "./MobileNavContext";
 
-export function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+function HeaderContent() {
+  const { isOpen, setIsOpen } = useMobileNav();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-white/80 backdrop-blur-md transition-all ease-in-out">
@@ -54,44 +55,44 @@ export function Header() {
         </button>
       </div>
 
-      {/* Backdrop overlay */}
+      {/* Backdrop overlay - darker for better separation */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-black/50 z-[9998] md:hidden transition-opacity duration-300"
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-[9998] md:hidden transition-opacity duration-300"
           onClick={() => setIsOpen(false)}
         />
       )}
 
-      {/* Mobile Nav Drawer - Slide in from right */}
+      {/* Mobile Nav Drawer - Slide in from right, solid white panel */}
       <div
         id="mobile-menu"
-        className={`fixed inset-y-0 right-0 z-[9999] w-72 bg-white shadow-2xl md:hidden transform transition-transform duration-300 ease-out ${
+        className={`fixed inset-y-0 right-0 z-[9999] w-80 max-w-[85vw] bg-white shadow-2xl md:hidden transform transition-transform duration-300 ease-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        {/* Header with close button */}
-        <div className="flex items-center justify-between px-4 pt-4 pb-2">
-          <span className="text-sm font-semibold text-neutral-400 uppercase tracking-wider">Menu</span>
+        {/* Drawer header */}
+        <div className="flex items-center justify-between px-5 pt-5 pb-4 border-b border-neutral-100">
+          <span className="text-xs font-semibold text-neutral-400 uppercase tracking-wider">Navigation</span>
           <button
             onClick={() => setIsOpen(false)}
-            className="flex items-center justify-center w-8 h-8 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors"
+            className="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors"
             aria-label="Close menu"
           >
-            <X className="h-4 w-4 text-neutral-600" />
+            <X className="h-5 w-5 text-neutral-600" />
           </button>
         </div>
 
-        {/* Menu content */}
-        <div className="flex flex-col px-3 pb-6">
-          <nav className="flex flex-col gap-1 text-base">
+        {/* Navigation links */}
+        <div className="flex flex-col px-4 pt-4">
+          <nav className="flex flex-col gap-1">
             {publicNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={
                   item.highlight
-                    ? "font-semibold text-teal-600 px-3 py-3 rounded-lg bg-teal-50"
-                    : "font-medium text-neutral-700 px-3 py-3 rounded-lg hover:bg-neutral-50 transition-colors"
+                    ? "font-semibold text-teal-600 px-4 py-4 rounded-xl bg-teal-50 text-base"
+                    : "font-medium text-neutral-700 px-4 py-4 rounded-xl hover:bg-neutral-50 transition-colors text-base"
                 }
                 onClick={() => setIsOpen(false)}
               >
@@ -101,17 +102,17 @@ export function Header() {
           </nav>
 
           {/* App CTA */}
-          <div className="mt-6 pt-6 border-t border-neutral-100">
+          <div className="mt-6 pt-5 border-t border-neutral-100">
             {siteConfig.links.playStore ? (
               <Button
                 href={siteConfig.links.playStore}
                 variant="primary"
-                className="w-full justify-center"
+                className="w-full justify-center py-4 text-base font-semibold"
               >
                 Get the App
               </Button>
             ) : (
-              <div className="text-center text-sm text-neutral-500 py-3">
+              <div className="text-center text-sm text-neutral-500 py-4">
                 App coming soon
               </div>
             )}
@@ -119,5 +120,13 @@ export function Header() {
         </div>
       </div>
     </header>
+  );
+}
+
+export function Header() {
+  return (
+    <MobileNavProvider>
+      <HeaderContent />
+    </MobileNavProvider>
   );
 }

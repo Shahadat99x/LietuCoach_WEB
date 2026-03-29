@@ -5,9 +5,11 @@ import { X } from "lucide-react";
 import { getPlayStoreLink } from "@/lib/analytics";
 import { siteConfig } from "@/config/site";
 import { Button } from "@/components/ui/Button";
+import { useMobileNav } from "./MobileNavContext";
 
 export function MobileStickyCTA() {
   const [isVisible, setIsVisible] = useState(false);
+  const { isOpen } = useMobileNav();
 
   useEffect(() => {
     // Check if user has dismissed it previously
@@ -21,12 +23,16 @@ export function MobileStickyCTA() {
     }
   }, []);
 
+  // Hide the sticky CTA when mobile menu is open
+  if (isOpen) return null;
+
+  // Don't render if not visible
+  if (!isVisible) return null;
+
   const handleDismiss = () => {
     setIsVisible(false);
     localStorage.setItem("lietucoach-sticky-dismissed", "true");
   };
-
-  if (!isVisible) return null;
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-40 md:hidden animate-in slide-in-from-bottom-10 fade-in duration-500">
