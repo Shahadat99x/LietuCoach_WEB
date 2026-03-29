@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 import { publicNavItems } from "@/config/nav";
 import { getPlayStoreLink } from "@/lib/analytics";
-import { MobileNavProvider, useMobileNav } from "./MobileNavContext";
+import { useMobileNav } from "./MobileNavContext";
 
 function HeaderContent() {
   const { isOpen, setIsOpen } = useMobileNav();
@@ -55,9 +55,5 @@ function HeaderContent() {
 }
 
 export function Header() {
-  return (
-    <MobileNavProvider>
-      <HeaderContent />
-    </MobileNavProvider>
-  );
+  return <HeaderContent />;
 }
