@@ -30,6 +30,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      publishedTime: post.date,
+      authors: post.author ? [post.author] : undefined,
+      url: siteConfig.url + "/blog/" + slug,
+    },
   };
 }
 
@@ -58,14 +66,13 @@ export default async function BlogPostPage({ params }: Props) {
       "name": post.author,
     },
     "datePublished": post.date,
-    "image": `${siteConfig.url}/og-image.jpg`, // Fallback
-    "url": `${siteConfig.url}/blog/${slug}`,
+    "url": siteConfig.url + "/blog/" + slug,
     "publisher": {
       "@type": "Organization",
       "name": siteConfig.name,
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteConfig.url}/favicon.ico`,
+        "url": siteConfig.url + "/favicon.ico",
       },
     },
   };
@@ -73,14 +80,14 @@ export default async function BlogPostPage({ params }: Props) {
   return (
     <article className="container mx-auto max-w-3xl px-4 py-16 md:px-6">
       <Script
-        id={`json-ld-article-${slug}`}
+        id={"json-ld-blog-" + slug}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Breadcrumbs 
         items={[
           { label: "Blog", href: "/blog" },
-          { label: post.title, href: `/blog/${slug}` },
+          { label: post.title, href: "/blog/" + slug },
         ]} 
       />
       
@@ -89,7 +96,7 @@ export default async function BlogPostPage({ params }: Props) {
         <p className="text-lg text-neutral-600 mb-4">{post.excerpt}</p>
         <div className="flex items-center justify-center gap-4 text-sm text-neutral-500">
           <span>{post.date}</span>
-          <span>•</span>
+          <span>-</span>
           <span>By {post.author}</span>
         </div>
       </header>
@@ -108,7 +115,7 @@ export default async function BlogPostPage({ params }: Props) {
             .slice(0, 2)
             .map((resource) => (
               <Card key={resource.slug} className="group p-6 hover:border-violet-200">
-                <Link href={`/resources/${resource.slug}`} className="block">
+                <Link href={"/resources/" + resource.slug} className="block">
                     <h4 className="mb-2 text-lg font-bold text-neutral-900 group-hover:text-violet-700">
                     {resource.title}
                     </h4>

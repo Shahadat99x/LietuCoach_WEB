@@ -31,6 +31,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: resource.title,
     description: resource.excerpt,
+    openGraph: {
+      title: resource.title,
+      description: resource.excerpt,
+      type: "article",
+      url: siteConfig.url + "/resources/" + slug,
+    },
   };
 }
 
@@ -56,7 +62,7 @@ export default async function ResourcePage({ params }: Props) {
     "description": resource.excerpt,
     "learningResourceType": "Guide",
     "educationalLevel": "Beginner",
-    "url": `${siteConfig.url}/resources/${slug}`,
+    "url": siteConfig.url + "/resources/" + slug,
     "author": {
       "@type": "Organization",
       "name": siteConfig.name,
@@ -67,14 +73,14 @@ export default async function ResourcePage({ params }: Props) {
   return (
     <article className="container mx-auto max-w-3xl px-4 py-16 md:px-6">
       <Script
-        id={`json-ld-resource-${slug}`}
+        id={"json-ld-resource-" + slug}
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Breadcrumbs 
         items={[
           { label: "Resources", href: "/resources" },
-          { label: resource.title, href: `/resources/${slug}` },
+          { label: resource.title, href: "/resources/" + slug },
         ]} 
       />
       
@@ -100,11 +106,11 @@ export default async function ResourcePage({ params }: Props) {
         <h3 className="mb-6 font-heading text-2xl font-bold text-neutral-900">More Guides</h3>
         <div className="grid gap-6 md:grid-cols-2">
             {getAllContent("resources")
-            .filter(r => r.slug !== slug) // Exclude current
+            .filter(r => r.slug !== slug)
             .slice(0, 2)
             .map((related) => (
                 <Card key={related.slug} className="group p-6 hover:border-teal-200">
-                <Link href={`/resources/${related.slug}`} className="block">
+                <Link href={"/resources/" + related.slug} className="block">
                     <h4 className="mb-2 text-lg font-bold text-neutral-900 group-hover:text-teal-700">
                     {related.title}
                     </h4>

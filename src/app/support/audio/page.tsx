@@ -1,6 +1,7 @@
 import { SupportLayout } from "@/components/support/SupportLayout";
 
 export const metadata = {
+  robots: { index: false, follow: true },
   title: "Audio Troubleshooting - Help Center",
   description: "Fix common audio playback issues in LietuCoach."
 };

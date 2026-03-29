@@ -24,8 +24,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    template: `%s | ${siteConfig.name}`,
-    default: `${siteConfig.name} - ${siteConfig.tagline}`,
+    template: "%s | " + siteConfig.name,
+    default: siteConfig.name + " - " + siteConfig.tagline,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
@@ -36,20 +36,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: siteConfig.name,
-    title: `${siteConfig.name} - ${siteConfig.tagline}`,
+    title: siteConfig.name + " - " + siteConfig.tagline,
     description: siteConfig.description,
-    images: [{
-      url: "/og-image.jpg",
-      width: 1200,
-      height: 630,
-      alt: siteConfig.name,
-    }],
   },
   twitter: {
-    card: "summary_large_image",
-    title: `${siteConfig.name} - ${siteConfig.tagline}`,
+    card: "summary",
+    title: siteConfig.name + " - " + siteConfig.tagline,
     description: siteConfig.description,
-    images: ["/og-image.jpg"],
   },
   robots: {
     index: true,
@@ -67,12 +60,12 @@ export default function RootLayout({
     "@graph": [
       {
         "@type": "Organization",
-        "@id": `${siteConfig.url}/#organization`,
+        "@id": siteConfig.url + "/#organization",
         "name": siteConfig.name,
         "url": siteConfig.url,
         "logo": {
           "@type": "ImageObject",
-          "url": `${siteConfig.url}/icon.svg`, // Fallback to our new SVG logo
+          "url": siteConfig.url + "/icon.svg",
         },
         "sameAs": [
           siteConfig.links.twitter,
@@ -90,7 +83,6 @@ export default function RootLayout({
           "priceCurrency": "USD"
         },
         "description": siteConfig.description,
-        // Only include installUrl if present
         ...(siteConfig.links.playStore ? { "installUrl": siteConfig.links.playStore } : {})
       }
     ]
@@ -99,7 +91,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="overflow-x-hidden">
       <body
-        className={`${outfit.variable} ${inter.variable} flex min-h-screen flex-col antialiased font-sans w-full overflow-x-hidden`}
+        className={outfit.variable + " " + inter.variable + " flex min-h-screen flex-col antialiased font-sans w-full overflow-x-hidden"}
       >
         <Script
           id="json-ld"

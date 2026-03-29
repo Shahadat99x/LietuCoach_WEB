@@ -3,6 +3,7 @@ import Link from "next/link";
 
 
 export const metadata = {
+  robots: { index: false, follow: true },
   title: "Account & Privacy - Help Center",
   description: "Managing your profile and data privacy."
 };

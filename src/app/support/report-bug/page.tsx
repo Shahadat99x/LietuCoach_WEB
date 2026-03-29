@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
 
 export const metadata = {
+  robots: { index: false, follow: true },
   title: "Report a Bug - Help Center",
   description: "Found an issue? Let us know."
 };

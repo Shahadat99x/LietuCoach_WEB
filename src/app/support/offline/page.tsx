@@ -1,6 +1,7 @@
 import { SupportLayout } from "@/components/support/SupportLayout";
 
 export const metadata = {
+  robots: { index: false, follow: true },
   title: "Offline Mode - Help Center",
   description: "How to use LietuCoach without an internet connection."
 };
