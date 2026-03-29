@@ -5,6 +5,8 @@ import { siteConfig } from "@/config/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
+import { MobileNavOverlay } from "@/components/layout/MobileNavOverlay";
+import { MobileMenuDrawer } from "@/components/layout/MobileMenuDrawer";
 import Script from "next/script";
 
 const outfit = Outfit({
@@ -105,6 +107,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         <Header />
+        <MobileNavOverlay />
+        <MobileMenuDrawer />
         <main className="flex-1 w-full flex flex-col">
           {children}
         </main>
