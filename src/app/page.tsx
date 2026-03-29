@@ -36,7 +36,7 @@ export default function Home() {
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
              {/* Render 2 Blogs + 1 Resource or mix. Let's show 3 Items total for grid balance */}
              {latestBlogs.map((post) => (
-                <Card key={post.slug} className="flex flex-col h-full hover:shadow-lg transition-all p-6 bg-white border-neutral-200">
+                <Card key={post.slug} className="group relative flex flex-col h-full hover:shadow-lg transition-all p-6 bg-white border-neutral-200">
                   <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-violet-600">
                     Blog
                   </div>
@@ -51,7 +51,7 @@ export default function Home() {
                 </Card>
              ))}
              {topResources.slice(0,1).map((resource) => (
-                <Card key={resource.slug} className="flex flex-col h-full hover:shadow-lg transition-all p-6 bg-white border-neutral-200">
+                <Card key={resource.slug} className="group relative flex flex-col h-full hover:shadow-lg transition-all p-6 bg-white border-neutral-200">
                    <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-teal-600">
                     Resource
                   </div>
