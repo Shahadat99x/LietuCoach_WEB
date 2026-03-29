@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/Button";
@@ -10,18 +10,6 @@ import { getPlayStoreLink } from "@/lib/analytics";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-
-  // Lock body scroll when mobile menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-white/80 backdrop-blur-md transition-all ease-in-out">
@@ -69,8 +57,8 @@ export function Header() {
       {/* Mobile Nav Overlay */}
       <div
         id="mobile-menu"
-        className={`fixed inset-0 z-50 bg-white transition-transform duration-300 ease-in-out md:hidden ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed inset-0 z-50 bg-white md:hidden ${
+          isOpen ? "flex" : "hidden"
         }`}
       >
         <div className="flex flex-col h-full overflow-y-auto pt-24 px-6 pb-6">

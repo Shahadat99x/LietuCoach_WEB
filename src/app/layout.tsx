@@ -95,7 +95,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className="overflow-x-hidden">
       <body
         className={`${outfit.variable} ${inter.variable} flex min-h-screen flex-col antialiased font-sans w-full overflow-x-hidden`}
       >

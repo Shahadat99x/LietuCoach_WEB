@@ -47,7 +47,7 @@
 @layer components {
   /* Enforce core structural bounds for Tailwind v4 missing containers */
   .container {
-    @apply w-full max-w-[100vw] mx-auto;
+    @apply w-full max-w-full mx-auto;
   }
 
   /* Micro-interactions */
