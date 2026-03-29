@@ -5,7 +5,6 @@ import { getPlayStoreLink } from "@/lib/analytics";
 import { Card } from "@/components/ui/Card";
 import { CheckCircle, Headphones, MessageSquare, BookOpen, Trophy } from "lucide-react";
 import Link from "next/link";
-import { getAllContent } from "@/lib/mdx";
 
 export const metadata: Metadata = {
   title: "Start Here: Your 7-Day Lithuanian Roadmap",
@@ -23,7 +22,7 @@ export default function StartPage() {
       title: "The Sounds of Lithuanian",
       task: "Master the alphabet and pronunciation. Don't worry about grammar yet.",
       icon: Headphones,
-      link: "/resources/lithuanian-alphabet-mastery", // Will exist soon
+      link: "/resources/lithuanian-alphabet-mastery",
     },
     {
       day: "Day 2",
@@ -53,14 +52,14 @@ export default function StartPage() {
       icon: BookOpen,
       link: "/resources/public-transport-guide",
     },
-     {
+    {
       day: "Day 6",
       title: "Introduction to Grammar",
       task: "Understand the concept of Cases (without memorizing tables).",
       icon: BookOpen,
       link: "/resources/understanding-cases-gentle",
     },
-     {
+    {
       day: "Day 7",
       title: "First Conversation",
       task: "Practice a full dialogue using the LietuCoach app.",
@@ -68,8 +67,6 @@ export default function StartPage() {
       appAction: true,
     },
   ];
-
-  const topResources = getAllContent("resources").slice(0, 3);
 
   return (
     <div className="bg-neutral-50 min-h-screen">
@@ -87,23 +84,23 @@ export default function StartPage() {
             Forget boring textbooks. Here is a practical, week-long plan to survive and thrive in Lithuania.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-             {siteConfig.links.playStore ? (
-                <Button 
-                  href={getPlayStoreLink("start_page")}
-                  size="lg" 
-                  className="bg-teal-500 hover:bg-teal-600 text-white shadow-xl shadow-violet-900/20 border-none"
-                >
-                  Download the Companion App
-                </Button>
-             ) : (
-                <Button 
-                  href="#roadmap"
-                  size="lg" 
-                  className="bg-white text-violet-700 hover:bg-violet-50"
-                >
-                  Start the Roadmap
-                </Button>
-             )}
+            {siteConfig.links.playStore ? (
+              <Button 
+                href={getPlayStoreLink("start_page")}
+                size="lg" 
+                className="bg-teal-500 hover:bg-teal-600 text-white shadow-xl shadow-violet-900/20 border-none"
+              >
+                Download the Companion App
+              </Button>
+            ) : (
+              <Button 
+                href="#roadmap"
+                size="lg" 
+                className="bg-white text-violet-700 hover:bg-violet-50"
+              >
+                Start the Roadmap
+              </Button>
+            )}
           </div>
         </div>
       </section>
@@ -135,7 +132,7 @@ export default function StartPage() {
                 
                 {step.appAction ? (
                    <div className="bg-violet-50 p-3 rounded-lg text-sm text-violet-800 font-medium flex items-center gap-2">
-                      <span>📱 Best done in the App</span>
+                      <span>Best done in the App</span>
                    </div>
                 ) : (
                      <Link href={step.link || "#"} className="text-violet-700 font-semibold text-sm hover:underline flex items-center gap-1">
