@@ -15,7 +15,7 @@ export function Header() {
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-white/80 backdrop-blur-md transition-all ease-in-out">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 md:px-6">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 font-heading text-xl font-bold text-violet-700 z-50 relative">
+        <Link href="/" className="flex items-center gap-2 font-heading text-xl font-bold text-violet-700 z-[60] relative">
           <BookOpen className="h-6 w-6" />
           <span>LietuCoach</span>
         </Link>
@@ -44,7 +44,7 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="flex md:hidden z-50 relative p-2"
+          className="flex md:hidden z-[60] relative p-2"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
@@ -57,27 +57,39 @@ export function Header() {
       {/* Mobile Nav Overlay */}
       <div
         id="mobile-menu"
-        className={`fixed inset-0 z-50 bg-white md:hidden ${
-          isOpen ? "flex" : "hidden"
+        className={`fixed inset-0 z-[9999] bg-white w-full h-full md:hidden transition-opacity duration-200 ${
+          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col h-full overflow-y-auto pt-24 px-6 pb-6">
-          <nav className="flex flex-col gap-6 text-lg">
+        {/* Close button at top right */}
+        <div className="absolute top-4 right-4 z-[10000]">
+          <button
+            onClick={() => setIsOpen(false)}
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-100 hover:bg-neutral-200 transition-colors"
+            aria-label="Close menu"
+          >
+            <X className="h-6 w-6 text-neutral-900" />
+          </button>
+        </div>
+
+        {/* Menu content */}
+        <div className="flex flex-col h-full w-full pt-20 px-6 pb-6">
+          <nav className="flex flex-col gap-1 text-lg">
             {publicNavItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 className={
                   item.highlight
-                    ? "font-bold text-teal-600 border-b border-neutral-100 py-4"
-                    : "font-medium text-neutral-900 border-b border-neutral-100 py-4"
+                    ? "font-bold text-teal-600 border-b border-neutral-100 py-4 px-2"
+                    : "font-medium text-neutral-900 border-b border-neutral-100 py-4 px-2"
                 }
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
-            <div className="pt-4">
+            <div className="pt-6 px-2">
               {siteConfig.links.playStore && (
                 <Button
                   href={siteConfig.links.playStore}
