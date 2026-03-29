@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/config/site";
+import { publicNavItems } from "@/config/nav";
 import { getPlayStoreLink } from "@/lib/analytics";
 
 export function Header() {
@@ -33,18 +34,19 @@ export function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden items-center gap-6 md:flex">
-          <Link href="/resources" className="text-sm font-medium text-neutral-600 hover:text-violet-600">
-            Resources
-          </Link>
-          <Link href="/blog" className="text-sm font-medium text-neutral-600 hover:text-violet-600">
-            Blog
-          </Link>
-          <Link href="/start" className="text-sm font-bold text-teal-600 hover:text-teal-700">
-            Start Here
-          </Link>
-          <Link href="/support" className="text-sm font-medium text-neutral-600 hover:text-violet-600">
-            Support
-          </Link>
+          {publicNavItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={
+                item.highlight
+                  ? "text-sm font-bold text-teal-600 hover:text-teal-700"
+                  : "text-sm font-medium text-neutral-600 hover:text-violet-600"
+              }
+            >
+              {item.label}
+            </Link>
+          ))}
           {siteConfig.links.playStore && (
             <Button href={getPlayStoreLink("nav")} variant="primary" size="sm">
               Get the App
@@ -73,34 +75,20 @@ export function Header() {
       >
         <div className="flex flex-col h-full overflow-y-auto pt-24 px-6 pb-6">
           <nav className="flex flex-col gap-6 text-lg">
-            <Link
-              href="/resources"
-              className="font-medium text-neutral-900 border-b border-neutral-100 pb-4"
-              onClick={() => setIsOpen(false)}
-            >
-              Resources
-            </Link>
-            <Link
-              href="/blog"
-              className="font-medium text-neutral-900 border-b border-neutral-100 pb-4"
-              onClick={() => setIsOpen(false)}
-            >
-              Blog
-            </Link>
-            <Link
-              href="/start"
-              className="font-bold text-teal-600 border-b border-neutral-100 pb-4"
-              onClick={() => setIsOpen(false)}
-            >
-              Start Here
-            </Link>
-            <Link
-              href="/support"
-              className="font-medium text-neutral-900 border-b border-neutral-100 pb-4"
-              onClick={() => setIsOpen(false)}
-            >
-              Support
-            </Link>
+            {publicNavItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={
+                  item.highlight
+                    ? "font-bold text-teal-600 border-b border-neutral-100 py-4"
+                    : "font-medium text-neutral-900 border-b border-neutral-100 py-4"
+                }
+                onClick={() => setIsOpen(false)}
+              >
+                {item.label}
+              </Link>
+            ))}
             <div className="pt-4">
               {siteConfig.links.playStore && (
                 <Button
