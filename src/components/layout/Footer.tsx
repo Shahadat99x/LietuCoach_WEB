@@ -3,10 +3,6 @@ import { BookOpen } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { getPlayStoreLink } from "@/lib/analytics";
 
-// ... existing code ...
-
-
-
 export function Footer() {
   return (
     <footer className="border-t border-neutral-200 bg-neutral-50">
@@ -19,34 +15,17 @@ export function Footer() {
               <span>{siteConfig.name}</span>
             </Link>
             <p className="text-sm text-neutral-500">
-              {siteConfig.description}
+              The offline-first Lithuanian learning app for beginners.
             </p>
           </div>
 
-          {/* Product */}
+          {/* Learn */}
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-neutral-900">Product</h3>
+            <h3 className="mb-4 text-sm font-semibold text-neutral-900">Learn Lithuanian</h3>
             <ul className="space-y-3 text-sm text-neutral-600">
-              <li><Link href="/" className="hover:text-violet-600">Home</Link></li>
-              <li><Link href="/resources" className="hover:text-violet-600">Resources</Link></li>
+              <li><Link href="/start" className="hover:text-violet-600">7-Day Roadmap</Link></li>
+              <li><Link href="/resources" className="hover:text-violet-600">Free Guides</Link></li>
               <li><Link href="/blog" className="hover:text-violet-600">Blog</Link></li>
-              <li>
-                {siteConfig.links.playStore ? (
-                   <a 
-                    href={getPlayStoreLink("footer")} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-block transition-transform hover:scale-105 mt-2"
-                  >
-                     <div className="rounded-lg bg-neutral-900 px-3 py-1.5 text-white inline-flex flex-col items-start leading-none">
-                        <span className="text-[10px] font-medium opacity-80">GET IT ON</span>
-                        <span className="text-sm font-bold">Google Play</span>
-                     </div>
-                  </a>
-                ) : (
-                  <span className="text-neutral-400 italic">Android App Coming Soon</span>
-                )}
-              </li>
             </ul>
           </div>
 
@@ -55,8 +34,8 @@ export function Footer() {
             <h3 className="mb-4 text-sm font-semibold text-neutral-900">Support</h3>
             <ul className="space-y-3 text-sm text-neutral-600">
               <li><Link href="/support" className="hover:text-violet-600">Help Center</Link></li>
-              <li><a href={`mailto:${siteConfig.links.supportEmail}`} className="hover:text-violet-600">Contact Us</a></li>
-              <li><Link href="/data-deletion" className="hover:text-violet-600">Request Data Deletion</Link></li>
+              <li><a href="mailto:hello@dhossain.com" className="hover:text-violet-600">Contact Us</a></li>
+              <li><Link href="/support/offline" className="hover:text-violet-600">Offline Mode FAQ</Link></li>
             </ul>
           </div>
 
@@ -67,13 +46,35 @@ export function Footer() {
               <li><Link href="/privacy" className="hover:text-violet-600">Privacy Policy</Link></li>
               <li><Link href="/terms" className="hover:text-violet-600">Terms of Service</Link></li>
               <li><Link href="/data-deletion" className="hover:text-violet-600">Data Deletion</Link></li>
-              <li><Link href="/support" className="hover:text-violet-600">Support</Link></li>
             </ul>
           </div>
         </div>
+
+        {/* App Download */}
+        <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-xl bg-white p-4 border border-neutral-200">
+          <div>
+            <p className="font-semibold text-neutral-900">Get the LietuCoach App</p>
+            <p className="text-sm text-neutral-500">Free Lithuanian lessons for Android.</p>
+          </div>
+          {siteConfig.links.playStore ? (
+            <a 
+              href={getPlayStoreLink("footer")} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="shrink-0"
+            >
+              <div className="rounded-lg bg-neutral-900 px-3 py-1.5 text-white inline-flex flex-col items-start leading-none">
+                <span className="text-[10px] font-medium opacity-80">GET IT ON</span>
+                <span className="text-sm font-bold">Google Play</span>
+              </div>
+            </a>
+          ) : (
+            <span className="text-neutral-400 italic">Coming Soon</span>
+          )}
+        </div>
         
-        <div className="mt-12 border-t border-neutral-200 pt-8 text-center text-sm text-neutral-500">
-          © {new Date().getFullYear()} {siteConfig.author.name}. All rights reserved.
+        <div className="mt-8 border-t border-neutral-200 pt-8 text-center text-sm text-neutral-500">
+          &copy; {new Date().getFullYear()} {siteConfig.author.name}. All rights reserved.
         </div>
       </div>
     </footer>

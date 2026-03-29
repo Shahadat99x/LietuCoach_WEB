@@ -5,23 +5,23 @@ export function HowItWorks() {
   const steps = [
     {
       icon: Download,
-      title: "1. Download & Go Offline",
-      description: "Get the app and download the entire course. No internet needed after this point.",
+      title: "1. Download Once",
+      description: "Get the app and download the core content pack. Everything works offline after that - no internet needed.",
     },
     {
       icon: Headphones,
       title: "2. Listen & Repeat",
-      description: "Start with A1 basics. Hear native audio and mimic the intonation.",
+      description: "Start with A1 basics. Hear native audio, practice pronunciation, and build your vocabulary step by step.",
     },
     {
       icon: MessageSquare,
-      title: "3. Role-Play Scenarios",
-      description: "Order coffee or ask for directions in our pressure-free simulator.",
+      title: "3. Practice Conversations",
+      description: "Role-play real-life scenarios - order coffee, ask for directions, chat with locals. Build confidence in a stress-free environment.",
     },
     {
       icon: Trophy,
-      title: "4. Speak with Confidence",
-      description: "Track your progress and start speaking real Lithuanian in days, not months.",
+      title: "4. Track Your Progress",
+      description: "Earn streaks, complete lessons, and watch your Lithuanian improve day by day.",
     },
   ];
 
@@ -33,7 +33,7 @@ export function HowItWorks() {
             How LietuCoach Works
           </h2>
           <p className="text-lg text-neutral-600">
-            We stripped away the gamified fluff. Here is the straight path to speaking.
+            Simple steps to start speaking practical Lithuanian today.
           </p>
         </div>
 

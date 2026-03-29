@@ -3,10 +3,10 @@ import { siteConfig } from "@/config/site";
 import { LegalSubnav } from "@/components/legal/LegalSubnav";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: `Terms of Service for ${siteConfig.name}.`,
+  title: "Terms of Service - LietuCoach",
+  description: "Terms and conditions for using " + siteConfig.name + ". Learn the rules and guidelines for using the app.",
   openGraph: {
-    title: "Terms of Service | LietuCoach",
+    title: "Terms of Service | " + siteConfig.name,
     description: "Terms and conditions for using LietuCoach.",
     type: "website",
   },
@@ -26,35 +26,35 @@ export default function TermsPage() {
         <section>
           <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">1. Acceptance of Terms</h2>
           <p className="mb-4">
-            By downloading, installing, or using LietuCoach (&quot;App&quot;), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.
+            By downloading, installing, or using LietuCoach, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the app.
           </p>
         </section>
 
         <section>
           <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">2. Description of Service</h2>
           <p className="mb-4">
-            LietuCoach is an educational application designed to help users learn the Lithuanian language through vocabulary cards, quizzes, and other interactive features. The App is provided &quot;as is&quot; and is currently free to use.
+            LietuCoach is a Lithuanian language learning app. It provides vocabulary practice, audio lessons, and interactive exercises to help users learn basic Lithuanian. The app is provided as is and is currently free to use.
           </p>
         </section>
 
         <section>
           <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">3. Accounts</h2>
           <p className="mb-4">
-            You may use the App without an account, but standard features (progress syncing) require signing in with a Google account. You are responsible for maintaining the confidentiality of your account credentials.
+            You may use the app without an account. Creating an account is optional and lets you sync your progress across devices. You are responsible for maintaining the confidentiality of your account credentials.
           </p>
         </section>
 
         <section>
-          <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">4. License and Prohibited Use</h2>
+          <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">4. License and Acceptable Use</h2>
           <p className="mb-4">
-            We grant you a personal, non-transferable, non-exclusive license to use the App for personal, non-commercial purposes.
+            We grant you a personal, non-transferable, non-exclusive license to use the app for personal, non-commercial language learning purposes.
           </p>
           <p className="mb-4">
-            You agree NOT to:
+            You agree not to:
           </p>
           <ul className="list-disc space-y-2 pl-5">
-            <li>Reverse engineer, decompile, or disassemble the App.</li>
-            <li>Use the App for any illegal purpose.</li>
+            <li>Reverse engineer, decompile, or disassemble the app.</li>
+            <li>Use the app for any illegal purpose.</li>
             <li>Attempt to gain unauthorized access to our servers or user data.</li>
           </ul>
         </section>
@@ -62,31 +62,31 @@ export default function TermsPage() {
         <section>
           <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">5. Educational Disclaimer</h2>
           <p className="mb-4">
-            The App is improved continuously but we do not guarantee that the content is free of errors. Language learning is a complex process, and we are not responsible if you do not achieve specific fluency results.
+            The app is improved continuously, but we do not guarantee that the content is free of errors. Language learning is a complex process, and we are not responsible if you do not achieve specific fluency results.
           </p>
         </section>
 
         <section>
           <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">6. Limitation of Liability</h2>
           <p className="mb-4">
-            To the fullest extent permitted by law, LietuCoach and its developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues.
+            To the fullest extent permitted by law, LietuCoach and its developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the app.
           </p>
         </section>
 
         <section>
           <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">7. Termination</h2>
           <p className="mb-4">
-            We reserve the right to suspend or terminate your access to the App at our sole discretion, without notice, for conduct that we believe violates these Terms.
+            We reserve the right to suspend or terminate your access to the app at our sole discretion, without notice, for conduct that violates these Terms.
           </p>
           <p className="mb-4">
-            You may terminate these Terms at any time by deleting your account and removing the App from your device. See our <a href="/data-deletion" className="text-violet-600 hover:underline">Data Deletion page</a> for instructions.
+            You may stop using the app at any time by deleting it and, if you have an account, deleting your account. See our <a href="/data-deletion" className="text-violet-600 hover:underline">Data Deletion page</a> for instructions.
           </p>
         </section>
 
         <section>
-          <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">8. Contact Us</h2>
+          <h2 className="mb-4 font-heading text-2xl font-bold text-neutral-900">8. Contact</h2>
           <p>
-            If you have questions about these Terms, please contact: <br />
+            Questions about these Terms? Contact us at: <br />
             <strong><a href="mailto:hello@dhossain.com" className="text-violet-600 hover:underline">hello@dhossain.com</a></strong>
           </p>
         </section>

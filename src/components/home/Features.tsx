@@ -1,36 +1,37 @@
 import { WifiOff, MessageSquareText, Headphones, Users, Map, Feather } from "lucide-react";
 import { Card } from "@/components/ui/Card";
 import { siteConfig } from "@/config/site";
+import Link from "next/link";
 
 const features = [
   {
-    name: "Offline-Ready",
-    description: "Download lessons once, learn on a plane, in a forest, or at a cafe without Wi-Fi.",
+    name: "Works Completely Offline",
+    description: "Download lessons once and learn anywhere - on a plane, in a cafe, or underground. No WiFi required.",
     icon: WifiOff,
   },
   {
     name: "Practical Phrases",
-    description: "Skip the \"my uncle has a red decorative spoon\" nonsense. Learn what you actually need.",
+    description: "Learn what you actually need - ordering coffee, asking for directions, making small talk. Skip the textbook fluff.",
     icon: MessageSquareText,
   },
   {
-    name: "Audio Practice",
-    description: "Listen to native speakers and perfect your pronunciation with focused listening exercises.",
+    name: "Native Audio",
+    description: "Hear clear Lithuanian pronunciation from native speakers. Practice until it sounds natural.",
     icon: Headphones,
   },
   {
-    name: "Role-Play Scenarios",
-    description: "Practice real-life dialogues (ordering coffee, buying tickets) in a stress-free environment.",
+    name: "Real Conversations",
+    description: "Role-play everyday scenarios - at the market, on the bus, in a restaurant. Build real confidence.",
     icon: Users,
   },
   {
-    name: "Structured Path",
-    description: "A clear A1 curriculum that guides you step-by-step. No guessing what to learn next.",
+    name: "Guided Learning Path",
+    description: "A clear A1 curriculum that takes you from zero to basic conversations. No guessing what to learn next.",
     icon: Map,
   },
   {
-    name: "Lightweight",
-    description: "Designed to run smoothly on your phone without draining your battery or data plan.",
+    name: "Lightweight App",
+    description: "Small download, smooth performance, and minimal battery usage. Built for real phones, not just flagship devices.",
     icon: Feather,
   },
 ];
@@ -41,10 +42,10 @@ export function Features() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-16 text-center">
           <h2 className="mb-4 font-heading text-3xl font-bold text-neutral-900 sm:text-4xl">
-            Why learn with {siteConfig.name}?
+            Why LietuCoach works for beginners.
           </h2>
           <p className="mx-auto max-w-2xl text-lg text-neutral-600">
-            We focus on what matters: getting you speaking confidently without the fluff.
+            We focus on practical Lithuanian - the kind you can actually use in everyday situations in Lithuania.
           </p>
         </div>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -57,6 +58,12 @@ export function Features() {
               <p className="text-neutral-600 leading-relaxed">{feature.description}</p>
             </Card>
           ))}
+        </div>
+        <div className="mt-12 text-center">
+          <Link href="/resources" className="text-violet-700 font-semibold hover:text-violet-800 inline-flex items-center gap-2">
+            Browse free Lithuanian guides
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </Link>
         </div>
       </div>
     </section>

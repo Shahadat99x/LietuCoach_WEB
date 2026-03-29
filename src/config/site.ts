@@ -1,27 +1,30 @@
 export const siteConfig = {
   name: "LietuCoach",
-  tagline: "Learn Lithuanian offline-first.",
-  description: "The practical, offline-first app for mastering real-world Lithuanian conversations. No internet required.",
+  tagline: "Learn Lithuanian for everyday situations.",
+  description: "The offline-first Lithuanian app for beginners. Practice real conversations, learn practical phrases, and build confidence - no internet required.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://lietucoach.app",
   links: {
     twitter: "https://twitter.com/lietucoach",
     github: "https://github.com/lietucoach",
     supportEmail: "hello@dhossain.com",
-    playStore: "https://play.google.com/store/apps/details?id=app.lietucoach.lietucoach", // Set to "" to enable "Coming Soon" mode
+    playStore: "https://play.google.com/store/apps/details?id=app.lietucoach.lietucoach",
   },
   author: {
     name: "LietuCoach Team",
     url: "https://lietucoach.app",
   },
   keywords: [
-    "Learn Lithuanian",
-    "Lithuanian Language App",
-    "Offline Learning",
-    "Lithuanian Phrases",
-    "Vilnius Guide",
-    "Lithuanian Grammar",
-    "Travel to Lithuania",
+    "learn Lithuanian",
+    "Lithuanian language app",
+    "offline Lithuanian learning",
+    "Lithuanian phrases",
+    "speak Lithuanian",
+    "Lithuanian conversation practice",
+    "Lithuanian for beginners",
+    "Vilnius guide",
+    "Lithuanian grammar basics",
+    "Lithuanian travel phrases",
   ],
   version: "1.0.0",
-  lastUpdated: new Date().toISOString().split("T")[0], // Dynamic date for build time
+  lastUpdated: new Date().toISOString().split("T")[0],
 };
