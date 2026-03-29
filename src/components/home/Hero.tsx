@@ -4,12 +4,11 @@ import { siteConfig } from "@/config/site";
 import { getPlayStoreLink } from "@/lib/analytics";
 
 export function Hero() {
+  const playStoreHref = getPlayStoreLink("home_hero");
+
   return (
     <section className="relative overflow-clip bg-neutral-50 py-20 lg:py-32">
       <div className="container mx-auto flex flex-col items-center px-4 text-center md:px-6">
-        <div className="inline-flex items-center rounded-full bg-violet-100 px-3 py-1 text-sm font-medium text-violet-800 mb-6">
-          🚀 Launching Soon
-        </div>
         <h1 className="mb-6 max-w-4xl font-heading text-4xl font-bold leading-tight tracking-tight text-neutral-900 sm:font-bold sm:leading-tight sm:text-5xl md:text-6xl lg:text-7xl">
           Speak Lithuanian. <br className="hidden sm:block" />
           <span className="mt-2 block sm:mt-0 sm:inline bg-gradient-to-r from-violet-600 to-teal-500 bg-clip-text text-transparent">Anytime. Anywhere.</span>
@@ -18,24 +17,14 @@ export function Hero() {
           {siteConfig.description}
         </p>
         <div className="flex flex-col w-full max-w-md gap-4 sm:flex-row sm:max-w-none sm:justify-center">
-          {siteConfig.links.playStore ? (
-            <Button 
-              href={getPlayStoreLink("home_hero")}
-              size="lg" 
-              className="gap-2 shadow-xl shadow-violet-200 w-full sm:w-auto"
-            >
-              <Download className="h-5 w-5" />
-              Get it on Google Play
-            </Button>
-          ) : (
-            <Button 
-              href="#features"
-              size="lg" 
-              className="gap-2 shadow-xl shadow-violet-200 w-full sm:w-auto"
-            >
-              🚀 Launching Soon - See Features
-            </Button>
-          )}
+          <Button 
+            href={playStoreHref}
+            size="lg" 
+            className="gap-2 shadow-xl shadow-violet-200 w-full sm:w-auto"
+          >
+            <Download className="h-5 w-5" />
+            Get it on Google Play
+          </Button>
           <Button href="#features" variant="outline" size="lg" className="w-full sm:w-auto">
             See How It Works
           </Button>
