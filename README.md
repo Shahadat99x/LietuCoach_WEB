@@ -176,5 +176,5 @@ npm run build
 
 ## 👤 Author
 - **GitHub**: https://github.com/Shahadat99x
-- **Portfolio**: _Add your portfolio URL_
-- **LinkedIn**: _Add your LinkedIn URL_
+- **Portfolio**: www.dhossain.com
+- **LinkedIn**: https://linkedin.com/in/shahadat-ai
